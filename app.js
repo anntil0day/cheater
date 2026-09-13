@@ -44,6 +44,29 @@ async function loadSample(params = {}) {
   }
 }
 
+async function analyzeUploads(params) {
+  clearResults();
+  setBusy(true);
+  setStatus("Opening both PDFs locally…");
+
+  try {
+    const analysis = await source.load({
+      ...params,
+      onProgress: (message) => setStatus(message),
+    });
+    renderAnalysis(analysis);
+    const matchCount = analysis.slides.reduce((total, slide) => total + slide.textbookMatches.length, 0);
+    setStatus(`Analysis ready · ${analysis.slides.length} slides · ${matchCount} textbook matches`);
+    setActiveStateButton(null);
+  } catch (error) {
+    showError(error instanceof Error ? error.message : "The PDFs could not be analyzed.");
+    setStatus("Analysis needs attention");
+    setActiveStateButton(errorButton);
+  } finally {
+    setBusy(false);
+  }
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(form);
@@ -57,7 +80,12 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  loadSample({ pageStart, pageEnd });
+  analyzeUploads({
+    slidesFile: slidesFile.files?.[0] ?? null,
+    textbookFile: textbookFile.files?.[0] ?? null,
+    pageStart,
+    pageEnd,
+  });
 });
 
 slidesFile.addEventListener("change", () => updateFileLabel(slidesFile, "#slides-file-name"));

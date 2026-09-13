@@ -17,11 +17,33 @@ Every complete analysis must include every key below. Missing values use `""`, `
       slidePage: 1,
       slideTopic: "",
       slideTextExcerpt: "",
+      slidePreview: {
+        imageUrl: "",
+        alt: "",
+        courseLabel: "",
+        kicker: "",
+        title: "",
+        subtitle: "",
+        bullets: [],
+        visual: ""
+      },
       textbookMatches: [
         {
           matchId: "",
           textbookPage: 1,
           excerpt: "",
+          textbookPagePreview: {
+            imageUrl: "",
+            alt: "",
+            highlightRegions: [],
+            chapterTitle: "",
+            sectionTitle: "",
+            heading: "",
+            contextBefore: "",
+            highlightText: "",
+            contextAfter: "",
+            marginNote: ""
+          },
           relationship: "",
           confidence: "medium"
         }
@@ -50,6 +72,26 @@ Every complete analysis must include every key below. Missing values use `""`, `
 ```
 
 Confidence values are `"low"`, `"medium"`, or `"high"`.
+
+`slidePreview.imageUrl` and `textbookPagePreview.imageUrl` are empty for the Phase 0 sample reconstruction. In Phase 1 they may contain browser-safe URLs for rendered original PDF pages. `highlightRegions` contains percentage-based `{ x, y, width, height }` rectangles positioned over an original textbook page image. The text fields remain as a readable fallback.
+
+## Phase 1 load parameters
+
+Uploaded-material analysis enters only through `source.load(params)`:
+
+```js
+source.load({
+  slidesFile,
+  textbookFile,
+  pageStart,
+  pageEnd,
+  onProgress
+})
+```
+
+`slidesFile` and `textbookFile` are browser `File` objects for PDFs. `pageStart` and `pageEnd` are inclusive one-based PDF page numbers. `onProgress`, when supplied, receives readable status strings and does not affect the returned analysis shape.
+
+Phase 1 page images are in-memory browser data URLs generated from the selected local files. They are display artifacts only: they are not persisted, uploaded, or included in sample data. Analysis is limited to all slide pages and the explicitly selected textbook page range.
 
 ## Stable HTML IDs
 
@@ -94,4 +136,4 @@ The source layer is the only place data enters the application. Unused phase met
 
 ## DO NOT CHANGE WITHOUT ASKING
 
-Do not rename or remove analysis keys, stable HTML IDs, UI exports, source methods, or the file responsibilities above without explicit user approval. Later phases must extend these contracts additively.
+Do not rename or remove analysis keys, stable HTML IDs, UI exports, source methods, or the file responsibilities above without explicit user approval. Later phases must extend these contracts additively. Original page previews must preserve the complete page; highlights may overlay the page but must not crop away surrounding context.
