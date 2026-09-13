@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Map lecture slides to relevant textbook passages and exercises.">
+    <meta name="theme-color" content="#17324d">
+    <title>Lecture Textbook Mapper</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317324d'/%3E%3Cpath d='M15 17c8-2 14 0 17 4v29c-4-4-10-5-17-3V17Zm34 0c-8-2-14 0-17 4v29c4-4 10-5 17-3V17Z' fill='%23f6f3ec'/%3E%3Cpath d='M32 21v29' stroke='%2348a69b' stroke-width='3'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#main-content" aria-label="Lecture Textbook Mapper home">
+        <span class="brand-mark" aria-hidden="true">LT</span>
+        <span>
+          <strong>Lecture Textbook Mapper</strong>
+          <small>One lecture. The right textbook pages.</small>
+        </span>
+      </a>
+      <span class="phase-badge">Sample workspace</span>
+    </header>
+
+    <main id="main-content" class="app-shell">
+      <section class="setup-card" aria-labelledby="setup-title">
+        <div class="setup-heading">
+          <div>
+            <p class="eyebrow">Prepare your materials</p>
+            <h1 id="setup-title">Build a focused catch-up guide</h1>
+          </div>
+          <p>Choose one slide deck, one textbook, and the textbook pages assigned to this lecture.</p>
+        </div>
+
+        <form id="analysis-form" class="input-grid">
+          <label class="file-field" for="slides-file">
+            <span class="field-number">01</span>
+            <span class="field-copy">
+              <strong>Lecture slides</strong>
+              <span id="slides-file-name">Choose a PDF</span>
+            </span>
+            <input id="slides-file" name="slides" type="file" accept="application/pdf,.pdf">
+          </label>
+
+          <label class="file-field" for="textbook-file">
+            <span class="field-number">02</span>
+            <span class="field-copy">
+              <strong>Textbook</strong>
+              <span id="textbook-file-name">Choose a PDF</span>
+            </span>
+            <input id="textbook-file" name="textbook" type="file" accept="application/pdf,.pdf">
+          </label>
+
+          <fieldset class="range-field">
+            <legend><span class="field-number">03</span> Textbook page range</legend>
+            <div class="range-inputs">
+              <label for="page-start">From <input id="page-start" name="pageStart" type="number" min="1" value="42" inputmode="numeric"></label>
+              <span aria-hidden="true">—</span>
+              <label for="page-end">To <input id="page-end" name="pageEnd" type="number" min="1" value="57" inputmode="numeric"></label>
+            </div>
+          </fieldset>
+
+          <button id="analyze-button" class="primary-button" type="submit">
+            <span>Open sample analysis</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+        <p class="phase-note">This foundation uses representative sample content. Uploaded files are not read or sent anywhere yet.</p>
+      </section>
+
+      <section class="workspace" aria-labelledby="workspace-title">
+        <div class="workspace-bar">
+          <div>
+            <p class="eyebrow">Study workspace</p>
+            <h2 id="workspace-title">Lecture analysis</h2>
+          </div>
+          <div class="view-switcher" aria-label="Preview workspace states">
+            <button id="show-sample-button" class="state-button is-active" type="button">Sample</button>
+            <button id="show-empty-button" class="state-button" type="button">Empty</button>
+            <button id="show-error-button" class="state-button" type="button">Error</button>
+          </div>
+        </div>
+
+        <div id="status-region" class="status-region" role="status" aria-live="polite"></div>
+        <div id="message-panel" class="message-panel" hidden></div>
+
+        <div id="loading-panel" class="loading-panel" hidden aria-hidden="true">
+          <div class="skeleton skeleton-tall"></div>
+          <div class="skeleton-group">
+            <div class="skeleton"></div>
+            <div class="skeleton"></div>
+            <div class="skeleton skeleton-short"></div>
+          </div>
+        </div>
+
+        <div id="analysis-panel" class="analysis-layout" hidden>
+          <aside class="slide-sidebar" aria-labelledby="slide-list-title">
+            <div class="sidebar-heading">
+              <h3 id="slide-list-title">Slide pages</h3>
+              <span id="slide-count" class="count-pill"></span>
+            </div>
+            <nav id="slide-list" class="slide-list" aria-label="Lecture slide pages"></nav>
+          </aside>
+
+          <article id="slide-detail" class="slide-detail" aria-live="polite"></article>
+
+          <aside id="summary-panel" class="summary-panel" aria-labelledby="summary-title">
+            <p class="eyebrow">Lecture overview</p>
+            <h3 id="summary-title">Summary</h3>
+            <div id="summary-content"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <noscript>This app requires JavaScript to display the sample lecture analysis.</noscript>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

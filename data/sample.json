@@ -1,0 +1,151 @@
+{
+  "lectureTitle": "Introduction to Supply and Demand",
+  "detectedCourseTopic": "Principles of Microeconomics",
+  "textbookPageRange": { "start": 42, "end": 57 },
+  "slides": [
+    {
+      "slideId": "slide-01",
+      "slidePage": 1,
+      "slideTopic": "Markets and competition",
+      "slideTextExcerpt": "A market brings buyers and sellers together. Competitive markets contain many participants, so no single buyer or seller sets the price.",
+      "textbookMatches": [
+        {
+          "matchId": "match-01-a",
+          "textbookPage": 43,
+          "excerpt": "A market is a group of buyers and sellers of a particular good or service. Buyers determine demand, while sellers determine supply.",
+          "relationship": "Both sources introduce the market as the setting where supply and demand interact. The textbook separates the two roles named together on the slide.",
+          "confidence": "high"
+        },
+        {
+          "matchId": "match-01-b",
+          "textbookPage": 44,
+          "excerpt": "In a perfectly competitive market, the goods offered for sale are alike and the buyers and sellers are so numerous that each has a negligible effect on market price.",
+          "relationship": "This passage expands the slide’s definition of competition and explains why an individual participant cannot control price.",
+          "confidence": "high"
+        }
+      ],
+      "textbookExercises": [
+        {
+          "exerciseId": "exercise-01-a",
+          "exerciseLabel": "Quick Check 1",
+          "textbookPage": 45,
+          "questionExcerpt": "What are the characteristics of a perfectly competitive market?",
+          "testedKnowledgePoint": "Recognizing competitive market conditions",
+          "confidence": "high"
+        }
+      ],
+      "webExercises": []
+    },
+    {
+      "slideId": "slide-02",
+      "slidePage": 2,
+      "slideTopic": "The demand curve",
+      "slideTextExcerpt": "The law of demand: when the price of a good rises, the quantity demanded falls, other things equal.",
+      "textbookMatches": [
+        {
+          "matchId": "match-02-a",
+          "textbookPage": 46,
+          "excerpt": "The quantity demanded of any good is the amount of the good that buyers are willing and able to purchase.",
+          "relationship": "The textbook supplies the precise definition needed to interpret the quantity axis of the demand curve shown in the lecture.",
+          "confidence": "high"
+        },
+        {
+          "matchId": "match-02-b",
+          "textbookPage": 47,
+          "excerpt": "Because a lower price increases the quantity demanded, the demand curve slopes downward.",
+          "relationship": "This directly supports the slide’s law of demand and connects the verbal rule to the curve’s downward shape.",
+          "confidence": "high"
+        }
+      ],
+      "textbookExercises": [
+        {
+          "exerciseId": "exercise-02-a",
+          "exerciseLabel": "Problem 3",
+          "textbookPage": 49,
+          "questionExcerpt": "Draw a demand curve for music downloads and show what happens when the price of a music subscription falls.",
+          "testedKnowledgePoint": "Movement along a demand curve",
+          "confidence": "medium"
+        },
+        {
+          "exerciseId": "exercise-02-b",
+          "exerciseLabel": "Problem 4",
+          "textbookPage": 49,
+          "questionExcerpt": "Explain whether a change in income shifts the demand curve or causes movement along it.",
+          "testedKnowledgePoint": "Demand shifts versus movement along the curve",
+          "confidence": "high"
+        }
+      ],
+      "webExercises": []
+    },
+    {
+      "slideId": "slide-03",
+      "slidePage": 3,
+      "slideTopic": "Changes in demand",
+      "slideTextExcerpt": "Income, related goods, tastes, expectations, and the number of buyers can shift the entire demand curve.",
+      "textbookMatches": [
+        {
+          "matchId": "match-03-a",
+          "textbookPage": 50,
+          "excerpt": "Any change that raises the quantity buyers wish to purchase at every price shifts the demand curve to the right and is called an increase in demand.",
+          "relationship": "The passage defines the rightward shift referenced by the slide and distinguishes it from a price-driven movement along the curve.",
+          "confidence": "high"
+        }
+      ],
+      "textbookExercises": [
+        {
+          "exerciseId": "exercise-03-a",
+          "exerciseLabel": "Review Question 2",
+          "textbookPage": 52,
+          "questionExcerpt": "List the variables that shift the demand curve and give an example of each.",
+          "testedKnowledgePoint": "Determinants of demand",
+          "confidence": "high"
+        }
+      ],
+      "webExercises": []
+    },
+    {
+      "slideId": "slide-04",
+      "slidePage": 4,
+      "slideTopic": "Supply and equilibrium",
+      "slideTextExcerpt": "Market equilibrium occurs where the supply and demand curves intersect. At this price, quantity supplied equals quantity demanded.",
+      "textbookMatches": [
+        {
+          "matchId": "match-04-a",
+          "textbookPage": 54,
+          "excerpt": "At the equilibrium price, the quantity of the good that buyers are willing and able to buy exactly balances the quantity sellers are willing and able to sell.",
+          "relationship": "This is the textbook’s full explanation of the equality represented by the intersection on the lecture slide.",
+          "confidence": "high"
+        },
+        {
+          "matchId": "match-04-b",
+          "textbookPage": 55,
+          "excerpt": "A surplus puts downward pressure on price, while a shortage puts upward pressure on price.",
+          "relationship": "This adds the adjustment mechanism that explains how a market moves toward the equilibrium introduced on the slide.",
+          "confidence": "medium"
+        }
+      ],
+      "textbookExercises": [
+        {
+          "exerciseId": "exercise-04-a",
+          "exerciseLabel": "Problem 8",
+          "textbookPage": 57,
+          "questionExcerpt": "Using a supply-and-demand diagram, identify the equilibrium price and quantity, then show the effect of a price set above equilibrium.",
+          "testedKnowledgePoint": "Equilibrium and surplus analysis",
+          "confidence": "high"
+        }
+      ],
+      "webExercises": []
+    }
+  ],
+  "lectureSummary": {
+    "keyConcepts": ["competitive markets", "law of demand", "demand shifts", "market equilibrium"],
+    "overview": "The lecture introduces how buyers and sellers interact in competitive markets, then builds from individual demand decisions to demand shifts and market equilibrium.",
+    "importantPages": [43, 47, 50, 54, 55],
+    "reviewFocus": [
+      "Distinguish a change in quantity demanded from a shift in demand.",
+      "Practice identifying the variables that move the demand curve.",
+      "Use shortages and surpluses to explain movement toward equilibrium."
+    ]
+  },
+  "warnings": ["This is representative sample content; uploaded PDFs are not processed in Phase 0."]
+}
